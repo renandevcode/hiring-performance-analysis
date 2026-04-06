@@ -12,3 +12,7 @@ ENV/
 __pycache__/
 *.py[cod]
 *$py.class
+
+
+airline/test.csv
+airline/train.csv
