@@ -13,6 +13,4 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-
-airline/test.csv
-airline/train.csv
+read_csv/airline/*.csv

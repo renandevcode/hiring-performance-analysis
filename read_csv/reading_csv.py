@@ -28,7 +28,7 @@ def satisfaction_measure(dataframe:DataFrame,index_satisfaction:int):
     return  {"total interviews":tot,'neutral or dissatisfied quantity':neutral_or_dissatisfied_quantity,'satisfied quantity':satisfied_quantity,'neutral or dissatisfied percentage': f'{neutral_dissatisfied_percentage:.2f}', 'satisfied percentage' : f"{satisfied_percentage:.2f}"}
 
 #dataframe
-df=pd.read_csv("../airline/train.csv", encoding="latin1")
+df=pd.read_csv("airline/train.csv", encoding="latin1")
 
 gender,max_age,min_age='Male',30,18
 
