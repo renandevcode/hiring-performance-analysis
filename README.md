@@ -1,28 +1,41 @@
-# Sistema de Análise de Recrutamento e Performance
+#  Sistema de Análise de Dados (Recrutamento & Passageiros)
 
-Este projeto realiza a análise de dados de Recursos Humanos a partir de uma planilha Excel, com foco em entender a relação entre **nível de performance dos colaboradores** e os **métodos de contratação utilizados**.
+Este projeto reúne diferentes módulos de análise de dados utilizando Python, com foco em extração de insights a partir de arquivos **Excel** e **CSV**.
 
-O sistema gera um ranking dos canais de recrutamento que mais contratam profissionais em cada nível de desempenho.
-
----
-
-## Objetivo
-
-Identificar quais fontes de recrutamento (sites, plataformas, indicações, etc.) trazem colaboradores com melhor performance dentro da empresa.
+O objetivo é aplicar conceitos de análise de dados, manipulação com **Pandas** e geração de métricas úteis para tomada de decisão.
 
 ---
 
-## Funcionalidades
+##  Objetivo Geral
 
-- Filtrar dados por nível de performance  
-- Contar quantas contratações vieram de cada canal  
-- Gerar ranking dos canais mais eficientes  
-- Exibir dados formatados no terminal  
-- Exportar resultados para arquivos Excel  
+Desenvolver soluções de análise de dados que permitam:
+
+- Identificar padrões em dados corporativos (RH)
+- Avaliar desempenho de fontes de recrutamento
+- Analisar comportamento e satisfação de usuários (passageiros)
+- Gerar métricas quantitativas e percentuais
 
 ---
 
-## Tecnologias Utilizadas
+##  Módulos do Projeto
+
+### 📁 1. Análise de Recrutamento e Performance (Excel)
+
+Este módulo realiza a análise de dados de Recursos Humanos a partir de planilhas Excel.
+
+#### Objetivo
+Identificar quais fontes de recrutamento trazem colaboradores com melhor desempenho.
+
+#### ⚙️ Funcionalidades
+
+- Filtrar dados por nível de performance
+- Identificar canais de recrutamento utilizados
+- Contar contratações por canal
+- Gerar ranking dos canais mais eficientes
+- Exibir dados formatados no terminal
+- Exportar resultados para Excel
+
+####  Tecnologias
 
 - Python  
 - Pandas  
@@ -31,9 +44,82 @@ Identificar quais fontes de recrutamento (sites, plataformas, indicações, etc.
 
 ---
 
-## Instalação
+### 📁 2. Análise de Passageiros e Satisfação (CSV)
 
-Instale as dependências com:
+Este módulo trabalha com dados de passageiros de companhia aérea a partir de arquivos CSV.
 
+####  Objetivo
+
+Analisar características demográficas e nível de satisfação dos clientes.
+
+#### ⚙️ Funcionalidades
+
+- Filtrar passageiros por gênero e faixa etária  
+- Contar quantidade de passageiros por critérios definidos  
+- Calcular métricas de satisfação:
+  - Total de entrevistas  
+  - Quantidade de satisfeitos  
+  - Quantidade de neutros/insatisfeitos  
+  - Percentuais de satisfação  
+
+####  Lógica Implementada
+
+##### 🔹 Segmentação por idade e gênero
+A função percorre o dataset e retorna a quantidade de passageiros dentro de uma faixa etária específica e gênero.
+
+##### 🔹 Análise de satisfação
+Cálculo de métricas absolutas e percentuais com base nas respostas dos passageiros.
+
+####  Tecnologias
+
+- Python  
+- Pandas  
+
+---
+
+## 📁 Dataset (CSV - Passageiros)
+
+Os dados utilizados neste módulo foram obtidos no Kaggle:
+
+🔗 https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction
+
+### ⚠️ Importante
+
+Os arquivos de dados **não estão incluídos no repositório**.
+
+Para utilizar este módulo:
+
+1. Instale a biblioteca:
 ```bash
-pip install pandas tabulate openpyxl
+pip install kagglehub
+```
+
+2. Baixe o dataset:
+```python
+import kagglehub
+
+path = kagglehub.dataset_download("teejmahal20/airline-passenger-satisfaction")
+print(path)
+```
+
+3. Copie os arquivos `.csv` para a pasta:
+
+```
+read_csv/airline/
+```
+
+---
+
+
+## 📌 Estrutura do Projeto
+
+```
+.
+├── read_excel/
+├── read_csv/
+│   └── airline/
+├── data/
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
